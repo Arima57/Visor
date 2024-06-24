@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bjjlan4dtdsxq"]
+
+[ext_resource type="Texture2D" uid="uid://doeb3menm4ve" path="res://addons/visor/Themes/Visme/71d5a1fe772bc30092e2e8e970267547.webp" id="1_frb0h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tx8m8"]
+texture = ExtResource("1_frb0h")
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_tx8m8")
