@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckah7n7u8qeb5"]
+
+[ext_resource type="Script" path="res://addons/visor/src/Slides/slides.gd" id="1_usx2r"]
+[ext_resource type="AnimationLibrary" uid="uid://cpuc14pxe4thw" path="res://addons/visor/src/Slides/Transitions/Slide_ease_out.tres" id="2_xk1my"]
+
+[sub_resource type="Animation" id="Animation_f1vwj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position_offset_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3000.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35lis"]
+_data = {
+"RESET": SubResource("Animation_f1vwj")
+}
+
+[node name="Slide" type="Node2D" node_paths=PackedStringArray("animator")]
+script = ExtResource("1_usx2r")
+animator = NodePath("AnimationPlayer")
+position_offset_x = 3000.0
+initial_position = Vector2(0, 0)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -321.0
+offset_top = -73.5
+offset_right = 321.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 65
+text = "Let the fun begin"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_35lis"),
+"Slide_ease_out": ExtResource("2_xk1my")
+}

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfa2w73nf6ym7"]
 
 [ext_resource type="Script" path="res://addons/visor/src/Presentation/presentation.gd" id="1_ajh72"]
-[ext_resource type="Script" path="res://addons/visor/src/Slides/slides.gd" id="2_5xayi"]
+[ext_resource type="PackedScene" uid="uid://ckah7n7u8qeb5" path="res://addons/visor/src/Slides/slide.tscn" id="2_0x025"]
 
 [node name="Presentation" type="Control" node_paths=PackedStringArray("slides")]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ajh72")
-slides = [NodePath("Slide")]
+slides = [NodePath("Slide2"), NodePath("Slide")]
 
 [node name="Parents" type="Control" parent="."]
 layout_mode = 1
@@ -29,11 +29,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slide" type="Node2D" parent="."]
-script = ExtResource("2_5xayi")
+[node name="Slide2" parent="." instance=ExtResource("2_0x025")]
+position = Vector2(560, 300)
+initial_position = Vector2(560, 300)
 
-[node name="PanelContainer" type="PanelContainer" parent="Slide"]
-offset_left = 394.0
-offset_top = 238.0
-offset_right = 714.0
-offset_bottom = 436.0
+[node name="Slide" parent="." instance=ExtResource("2_0x025")]
+position = Vector2(3560, 300)
+initial_position = Vector2(560, 300)
+
+[editable path="Slide2"]
+[editable path="Slide"]

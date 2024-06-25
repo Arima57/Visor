@@ -1,0 +1,69 @@
+[gd_resource type="AnimationLibrary" load_steps=5 format=3 uid="uid://cpuc14pxe4thw"]
+
+[sub_resource type="Animation" id="Animation_djyog"]
+resource_name = "Slide_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position_offset_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.965936, 1),
+"update": 0,
+"values": [3000.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2fxsp"]
+resource_name = "Slide_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position_offset_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.517632, 1),
+"update": 0,
+"values": [-3000.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_23a5c"]
+resource_name = "Slide_out_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position_offset_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.13834, 1),
+"update": 0,
+"values": [0.0, -3000.0]
+}
+
+[sub_resource type="Animation" id="Animation_gv7bm"]
+resource_name = "Slide_out_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position_offset_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.406126, 1),
+"update": 0,
+"values": [0.0, 3000.0]
+}
+
+[resource]
+_data = {
+"Slide_left": SubResource("Animation_djyog"),
+"Slide_out_left": SubResource("Animation_23a5c"),
+"Slide_out_right": SubResource("Animation_gv7bm"),
+"Slide_right": SubResource("Animation_2fxsp")
+}
